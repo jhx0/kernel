@@ -1,0 +1,22 @@
+#!/usr/bin/env python3
+
+import requests
+
+KERNEL_URL = 'https://www.kernel.org/releases.json'
+
+def get_json():
+    """ Get JSON and return the text """
+    j = requests.get(KERNEL_URL)
+    return j.json()
+
+def print_kernel_info(json_data):
+    """ Print kernel information """
+    print("Latest Stable:  {}".format(json_data["latest_stable"]["version"]))
+
+    for releases in json_data["releases"]:
+        print("{:15} {:15} EOL: {}".format(releases["moniker"].title(), 
+                                           releases["version"], 
+                                           "Yes" if releases["iseol"] else "No"))
+
+if __name__ == "__main__":
+    print_kernel_info(get_json())
