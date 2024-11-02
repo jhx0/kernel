@@ -11,8 +11,14 @@ kernel is a small python script which shows the list of kernels currently provid
 2. Unpack/cd into the directory
 3. Install the needed dependencies
 ```
-$ pip3 install requests
+$ pip3 install -r requirements.txt
 ```
 3. Run the script
 ```
 $ ./kernel
+
+## Debian / Ubuntu users:
+Instead of leveraging **pip** you can also install the **requests Python package** from the **repository** as follows:
+```
+$ sudo apt install python3-requests
+```
