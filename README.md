@@ -16,6 +16,7 @@ $ pip3 install -r requirements.txt
 3. Run the script
 ```
 $ ./kernel
+```
 
 ## Debian / Ubuntu users:
 Instead of leveraging **pip** you can also install the **requests Python package** from the **repository** as follows:
